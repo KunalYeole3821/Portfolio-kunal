@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kunal Yeole — SEO &amp; Content</title>
+<meta name="description" content="Kunal Yeole — SEO &amp; content writer specializing in on-page optimization, search intent, and AI/GEO search.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #F6F3EC;
+    --paper-alt: #EFEADF;
+    --ink: #1C1A16;
+    --ink-soft: #55503F;
+    --moss: #33553B;
+    --moss-deep: #24402B;
+    --ochre: #B87A22;
+    --line: #DCD5C4;
+    --white: #FFFDF8;
+    --max: 920px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Public Sans', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--moss); color:var(--white); }
+  a{color:inherit;}
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
+
+  .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.04em;
+    color:var(--moss-deep);
+    text-transform:lowercase;
+  }
+  .tag::before{ content:"<"; color:var(--ochre); }
+  .tag::after{ content:">"; color:var(--ochre); }
+
+  h1,h2,h3{ font-family:'Fraunces', serif; font-weight:600; letter-spacing:-0.01em; color:var(--ink); }
+
+  /* ---------- Nav ---------- */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,243,236,0.9);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; max-width:var(--max); margin:0 auto; }
+  .nav .mark{ font-family:'Fraunces', serif; font-weight:700; font-size:19px; }
+  .nav .mark span{ color:var(--moss); }
+  .nav ul{ list-style:none; display:flex; gap:26px; }
+  .nav ul li{ white-space:nowrap; margin-right:26px; }
+  .nav ul li:last-child{ margin-right:0; }
+  .nav a{ text-decoration:none; font-size:14.5px; color:var(--ink-soft); font-weight:500; }
+  .nav a:hover{ color:var(--moss-deep); }
+  .nav .cta{
+    border:1px solid var(--ink); padding:7px 14px; border-radius:3px;
+    text-decoration:none; font-size:13.5px; font-weight:600;
+  }
+  .nav .cta:hover{ background:var(--ink); color:var(--white); }
+  .nav-links, .nav-mobile-toggle{ display:flex; align-items:center; gap:26px; }
+  .burger{ display:none; }
+
+  /* ---------- Hero ---------- */
+  .hero{ padding:76px 0 60px; }
+  .eyebrow{ margin-bottom:22px; }
+  .serp{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:20px 22px;
+    max-width:560px;
+    box-shadow:0 1px 0 rgba(0,0,0,0.02);
+  }
+  .serp .url-row{ display:flex; align-items:center; gap:8px; font-family:'Public Sans'; font-size:13px; color:var(--ink-soft); }
+  .serp .favicon{
+    width:18px; height:18px; border-radius:50%;
+    background:var(--moss); flex:none;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--white); font-family:'Fraunces',serif; font-size:11px; font-weight:700;
+  }
+  .serp .serp-title{
+    font-family:'Public Sans'; font-size:19px; color:#1a0dab; margin:8px 0 4px;
+    font-weight:500;
+  }
+  .serp .serp-desc{ font-size:14px; color:var(--ink-soft); line-height:1.5; }
+  .serp .blink{ display:inline-block; width:2px; height:14px; background:var(--moss); margin-left:2px; animation:blink 1s steps(1) infinite; vertical-align:middle; }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  h1.headline{ font-size:clamp(36px,5.4vw,58px); line-height:1.08; margin:34px 0 18px; max-width:780px; }
+  h1.headline em{ font-style:italic; color:var(--moss-deep); }
+  .hero-sub{ max-width:520px; color:var(--ink-soft); font-size:17.5px; margin-bottom:32px; }
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+  .hero-actions .btn{ margin-right:14px; }
+  .hero-actions .btn:last-child{ margin-right:0; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 20px; border-radius:3px; text-decoration:none;
+    font-weight:600; font-size:14.5px; font-family:'Public Sans';
+  }
+  .btn-primary{ background:var(--moss-deep); color:var(--white); }
+  .btn-primary:hover{ background:var(--ink); }
+  .btn-ghost{ border:1px solid var(--ink); color:var(--ink); }
+  .btn-ghost:hover{ background:var(--paper-alt); }
+
+  /* ---------- Sections generic ---------- */
+  section{ padding:64px 0; border-top:1px solid var(--line); }
+  section .kicker{ margin-bottom:14px; }
+  section h2{ font-size:clamp(26px,3.4vw,34px); margin-bottom:34px; max-width:640px; }
+
+  /* ---------- About ---------- */
+  .about-grid{ display:grid; grid-template-columns:1.4fr 1fr; gap:48px; align-items:start; }
+  .about-grid p{ color:var(--ink-soft); margin-bottom:16px; max-width:520px; }
+  .meta-box{
+    background:var(--white); border:1px solid var(--line); border-radius:8px; padding:22px;
+    font-family:'IBM Plex Mono', monospace; font-size:13px;
+  }
+  .meta-box dt{ color:var(--ochre); margin-top:12px; }
+  .meta-box dt:first-child{ margin-top:0; }
+  .meta-box dd{ color:var(--ink); margin-top:2px; word-break:break-word; }
+
+  /* ---------- Skills ---------- */
+  .chip-groups{ display:grid; grid-template-columns:repeat(2,1fr); gap:28px 40px; }
+  .chip-group h3{ font-family:'Public Sans'; font-size:13px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ochre); font-weight:700; margin-bottom:12px; }
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chips .chip{ margin:0 8px 8px 0; }
+  .chip{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px;
+    background:var(--white); border:1px solid var(--line); border-radius:4px;
+    padding:6px 10px; color:var(--ink);
+  }
+
+  /* ---------- Experience ---------- */
+  .role{
+    padding:26px 0; border-bottom:1px solid var(--line);
+    display:grid; grid-template-columns:200px 1fr; gap:24px;
+  }
+  .role:last-child{ border-bottom:none; }
+  .role-meta{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink-soft); }
+  .role-meta .dates{ display:block; margin-top:6px; }
+  .role h3{ font-size:19px; margin-bottom:4px; }
+  .role .company{ font-family:'Public Sans'; font-weight:600; color:var(--moss-deep); font-size:15px; margin-bottom:10px; }
+  .role ul{ margin:10px 0 0 18px; color:var(--ink-soft); font-size:15px; }
+  .role li{ margin-bottom:6px; }
+  .note{
+    margin-top:12px; font-size:13px; color:var(--ink-soft);
+    background:var(--paper-alt); border-left:2px solid var(--ochre);
+    padding:8px 12px; border-radius:2px;
+  }
+
+  /* ---------- Samples ---------- */
+  .samples{ display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .sample-card{
+    background:var(--white); border:1px solid var(--line); border-radius:8px;
+    padding:26px; display:flex; flex-direction:column; height:100%;
+  }
+  .sample-card .kind{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--ochre); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:10px; }
+  .sample-card h3{ font-size:20px; margin-bottom:10px; }
+  .sample-card p{ color:var(--ink-soft); font-size:14.5px; margin-bottom:16px; flex:1; }
+  .sample-card .stats{ display:flex; gap:16px; margin-bottom:16px; }
+  .stat{ font-family:'IBM Plex Mono', monospace; margin-right:16px; }
+  .stat:last-child{ margin-right:0; }
+  .stat b{ display:block; font-size:18px; color:var(--moss-deep); }
+  .stat span{ font-size:10.5px; color:var(--ink-soft); display:block; max-width:80px; line-height:1.3; }
+  .sample-card .expand{
+    align-self:flex-start; background:none; border:none; cursor:pointer;
+    font-family:'Public Sans'; font-weight:600; font-size:13.5px; color:var(--moss-deep);
+    padding:0; text-decoration:underline; text-underline-offset:3px;
+  }
+  .sample-body{
+    max-height:0; overflow:hidden; transition:max-height 0.35s ease;
+    font-size:14px; color:var(--ink-soft); margin-top:12px;
+  }
+  .sample-body.open{ max-height:900px; }
+  .sample-body p{ margin-bottom:10px; }
+  .disclaimer{
+    font-size:12px; color:var(--ink-soft); font-style:italic; margin-top:auto; padding-top:14px;
+  }
+
+  /* ---------- Certifications ---------- */
+  .cert-list{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+  .cert{
+    display:flex; align-items:center; gap:12px;
+    background:var(--white); border:1px solid var(--line); border-radius:6px; padding:14px 16px;
+    font-size:14.5px;
+  }
+  .cert .dot{ width:8px; height:8px; border-radius:50%; background:var(--moss); flex:none; }
+
+  /* ---------- Contact / Footer ---------- */
+  footer{ padding:64px 0 40px; border-top:1px solid var(--line); }
+  .contact-grid{ display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px; }
+  footer h2{ font-size:clamp(28px,4vw,40px); max-width:520px; margin-bottom:10px; }
+  footer p.sub{ color:var(--ink-soft); max-width:420px; margin-bottom:0; }
+  .contact-links{ display:flex; flex-direction:column; gap:10px; align-items:flex-end; }
+  .contact-links a{ text-decoration:none; font-family:'IBM Plex Mono', monospace; font-size:14px; border-bottom:1px solid var(--line); padding-bottom:2px; }
+  .contact-links a:hover{ border-color:var(--moss-deep); color:var(--moss-deep); }
+  .bottom-line{ margin-top:52px; padding-top:20px; border-top:1px solid var(--line); display:flex; justify-content:space-between; font-size:12.5px; color:var(--ink-soft); font-family:'IBM Plex Mono', monospace; flex-wrap:wrap; gap:8px; }
+
+  @media (max-width: 760px){
+    .about-grid, .chip-groups, .samples, .cert-list{ grid-template-columns:1fr; }
+    .role{ grid-template-columns:1fr; gap:8px; }
+    .nav ul{ display:none; }
+    .nav .cta{ padding:7px 10px; font-size:12.5px; }
+    .contact-grid{ flex-direction:column; align-items:flex-start; }
+    .contact-links{ align-items:flex-start; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .blink{ animation:none; }
+    .sample-body{ transition:none; }
+  }
+
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--moss-deep); outline-offset:2px; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a href="#top" class="mark">Kunal<span>.</span>Yeole</a>
+    <div class="nav-links">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#samples">Samples</a></li>
+      </ul>
+      <a class="cta" href="Kunal_Yeole_Resume.pdf" target="_blank" rel="noopener">Resume ↓</a>
+      <a class="cta" href="mailto:kunal.yeole38@gmail.com" style="margin-left:10px;">Get in touch</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero" style="border-top:none;">
+    <div class="wrap">
+      <div class="eyebrow">
+        <div class="serp">
+          <div class="url-row">
+            <span class="favicon">K</span>
+            www.linkedin.com/in/kkunalyeole
+          </div>
+          <div class="serp-title">Kunal Yeole — SEO &amp; Content Writer<span class="blink"></span></div>
+          <div class="serp-desc">On-page SEO, search intent, and content that ranks — for brands that want organic growth built the right way. MBA Marketing student, Pune, India.</div>
+        </div>
+      </div>
+
+      <h1 class="headline">I write content that people <em>and</em> search engines actually want.</h1>
+      <p class="hero-sub">SEO and content marketing, from keyword research and content briefs to on-page execution and AI-search (GEO) strategy. Currently sharpening on-page skills on live client sites as an SEO Intern.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="mailto:kunal.yeole38@gmail.com">Email me</a>
+        <a class="btn btn-ghost" href="Kunal_Yeole_Resume.pdf" target="_blank" rel="noopener">Download resume</a>
+        <a class="btn btn-ghost" href="#experience">See the work</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <p class="kicker tag">about</p>
+      <h2>SEO practitioner with a writer's instincts.</h2>
+      <div class="about-grid">
+        <div>
+          <p>I'm an MBA Marketing student (SPPU / IndSearch, Pune) who got into SEO through the writing side — creating content briefs, campaign copy, and audience research before moving into on-page execution.</p>
+          <p>Right now I'm an SEO Intern at Return On Web, working hands-on with metadata, headers, and internal linking on live client sites. Before that, I wrote UGC scripts, email campaigns, and marketing copy at ACLM Services, and ran content and social strategy for my college.</p>
+          <p>I'm also certified in AI SEO / Generative Engine Optimization (GEO) — I care about how content gets cited by AI answer engines as much as how it ranks on a results page.</p>
+        </div>
+        <dl class="meta-box">
+          <dt>role</dt><dd>SEO &amp; Content Writer</dd>
+          <dt>based in</dt><dd>Pune, Maharashtra, India</dd>
+          <dt>studying</dt><dd>MBA, Marketing (2025–2027)</dd>
+          <dt>focus</dt><dd>on-page SEO, search intent, GEO</dd>
+          <dt>tools</dt><dd>Google Analytics, Excel, AI SEO workflows</dd>
+          <dt>open to</dt><dd>remote SEO / content roles</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <p class="kicker tag">skills</p>
+      <h2>What I bring to a content or SEO team.</h2>
+      <div class="chip-groups">
+        <div class="chip-group">
+          <h3>Content</h3>
+          <div class="chips">
+            <span class="chip">Blog &amp; copywriting</span>
+            <span class="chip">Content briefs</span>
+            <span class="chip">UGC scripts</span>
+            <span class="chip">Email campaigns</span>
+            <span class="chip">Content calendars</span>
+          </div>
+        </div>
+        <div class="chip-group">
+          <h3>SEO</h3>
+          <div class="chips">
+            <span class="chip">Keyword research</span>
+            <span class="chip">Search intent mapping</span>
+            <span class="chip">On-page optimization</span>
+            <span class="chip">Internal linking</span>
+            <span class="chip">Meta titles &amp; descriptions</span>
+          </div>
+        </div>
+        <div class="chip-group">
+          <h3>AI &amp; Search</h3>
+          <div class="chips">
+            <span class="chip">GEO / AI search</span>
+            <span class="chip">AI-assisted content workflows</span>
+          </div>
+        </div>
+        <div class="chip-group">
+          <h3>Research &amp; Analytics</h3>
+          <div class="chips">
+            <span class="chip">Competitor analysis</span>
+            <span class="chip">Audience research</span>
+            <span class="chip">Google Analytics</span>
+            <span class="chip">Excel dashboards</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <p class="kicker tag">experience</p>
+      <h2>Where I've done the work.</h2>
+
+      <div class="role">
+        <div class="role-meta">SEO Intern<span class="dates">May 2026 – Aug 2026<br>Pune City, India</span></div>
+        <div>
+          <h3>Return On Web (ROW)</h3>
+          <div class="company">On-page SEO, live client sites</div>
+          <ul>
+            <li>Execute on-page SEO — metadata, headers, internal linking — on live client websites under senior guidance.</li>
+            <li>Apply search-intent alignment and content-improvement strategies across real client pages.</li>
+            <li>Building production-level SEO judgment in an agency setting.</li>
+          </ul>
+          <div class="note">Client work is confidential — happy to walk through my process and approach in a conversation.</div>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-meta">Social Media Marketing Intern<span class="dates">Jun 2025 – Aug 2025<br>Pune District, India</span></div>
+        <div>
+          <h3>ACLM Services</h3>
+          <div class="company">Content &amp; campaign writing</div>
+          <ul>
+            <li>Wrote UGC scripts, email campaigns, and marketing copy aligned with brand voice and search intent.</li>
+            <li>Created content briefs that translated audience research into clear direction for campaigns.</li>
+            <li>Ran competitor and influencer analysis to guide content and collaboration opportunities.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-meta">Social Media Coordinator<span class="dates">Sep 2022 – Sep 2023<br>Nagpur, India</span></div>
+        <div>
+          <h3>Dadasaheb Balpande College of Pharmacy</h3>
+          <div class="company">Content strategy &amp; production</div>
+          <ul>
+            <li>Wrote and produced multi-format content — posts, captions, video scripts — to drive event awareness.</li>
+            <li>Researched audience behavior and trends to shape campaign ideas that resonated with students.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="samples">
+    <div class="wrap">
+      <p class="kicker tag">samples</p>
+      <h2>A couple of sample projects.</h2>
+      <p style="color:var(--ink-soft); max-width:600px; margin:-18px 0 30px; font-size:14.5px;">Client work from my internships is confidential, so these are self-directed sample projects — built specifically to show how I think, not real client data. Ask and I'll gladly walk through my actual process.</p>
+
+      <div class="samples">
+        <div class="sample-card">
+          <div class="kind">Sample · SEO case study</div>
+          <h3>On-page audit: mid-size D2C site</h3>
+          <p>A self-directed audit identifying quick-win on-page opportunities — title/meta rewrites, header restructuring, and internal-linking gaps — for a hypothetical D2C apparel site.</p>
+          <div class="stats">
+            <div class="stat"><b>12</b><span>pages audited</span></div>
+            <div class="stat"><b>8</b><span>quick-win fixes</span></div>
+            <div class="stat"><b>3</b><span>linking clusters mapped</span></div>
+          </div>
+          <button class="expand" data-target="s1">Read the approach →</button>
+          <div class="sample-body" id="s1">
+            <p><b>Approach:</b> Started with a content inventory to flag thin or duplicate pages, then mapped each page to a specific search intent (informational, commercial, transactional) before touching any copy.</p>
+            <p><b>What I changed:</b> Rewrote meta titles/descriptions to match intent and include primary keywords naturally, restructured H1–H3 hierarchy for scannability, and proposed an internal-linking cluster connecting blog content to category pages.</p>
+            <p><b>Why it matters:</b> Small on-page fixes compound — this is the kind of pass I run before recommending any larger content investment.</p>
+          </div>
+          <p class="disclaimer">Sample project for demonstration — not affiliated with any real brand.</p>
+        </div>
+
+        <div class="sample-card">
+          <div class="kind">Sample · Writing</div>
+          <h3>"How to Plan a Sorority Recruitment Event" — content brief + intro</h3>
+          <p>A content brief and opening section written to match real search intent behind a long-tail, high-intent query — the kind of piece meant to earn clicks and time on page, not just rank.</p>
+          <div class="stats">
+            <div class="stat"><b>850</b><span>target word count</span></div>
+            <div class="stat"><b>Guide</b><span>content type</span></div>
+          </div>
+          <button class="expand" data-target="s2">Read the brief →</button>
+          <div class="sample-body" id="s2">
+            <p><b>Search intent:</b> The searcher is likely a chapter officer, weeks out from recruitment, overwhelmed and looking for a checklist more than inspiration.</p>
+            <p><b>Angle:</b> A step-by-step planning guide organized by timeline (8 weeks out, 4 weeks out, week of), not a generic listicle — because that's how the searcher actually thinks about the problem.</p>
+            <p><b>Opening lines (sample):</b> "Recruitment week always arrives faster than the planning calendar suggests. The chapters that pull it off calmly aren't the ones with the biggest budget — they're the ones who started with a checklist, not a Pinterest board."</p>
+            <p><b>Voice notes:</b> Warm, direct, a little conversational — written for a college-age reader, not a corporate one.</p>
+          </div>
+          <p class="disclaimer">Sample project for demonstration — written independently, no client affiliation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="wrap">
+      <p class="kicker tag">certifications</p>
+      <h2>Credentials.</h2>
+      <div class="cert-list">
+        <div class="cert"><span class="dot"></span>AI SEO: Mastering Generative Engine Optimization (GEO)</div>
+        <div class="cert"><span class="dot"></span>Inbound Marketing</div>
+        <div class="cert"><span class="dot"></span>Financial Literacy Project Certification — "FinLit"</div>
+        <div class="cert"><span class="dot"></span>Goldman Sachs — Operations Job Simulation</div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <h2>Let's talk about your content and search strategy.</h2>
+          <p class="sub">Open to remote SEO and content roles. I reply fast — usually same day.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:kunal.yeole38@gmail.com">kunal.yeole38@gmail.com</a>
+          <a href="https://www.linkedin.com/in/kkunalyeole" target="_blank" rel="noopener">linkedin.com/in/kkunalyeole</a>
+        </div>
+      </div>
+      <div class="bottom-line">
+        <span>Kunal Yeole — Pune, India</span>
+        <span>Built with intent, not templates.</span>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  document.querySelectorAll('.expand').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const target = document.getElementById(btn.dataset.target);
+      const isOpen = target.classList.toggle('open');
+      btn.textContent = isOpen ? 'Hide the approach ↑' : 'Read the approach →';
+      if(btn.dataset.target === 's2'){
+        btn.textContent = isOpen ? 'Hide the brief ↑' : 'Read the brief →';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
