@@ -186,6 +186,19 @@
     font-size:12px; color:var(--ink-soft); font-style:italic; margin-top:auto; padding-top:14px;
   }
 
+  /* ---------- Published work list ---------- */
+  .pub-list{ display:flex; flex-direction:column; gap:12px; }
+  .pub-card{
+    display:block; text-decoration:none; color:var(--ink);
+    background:var(--white); border:1px solid var(--line); border-radius:8px;
+    padding:18px 22px; transition:border-color 0.15s ease, transform 0.15s ease;
+  }
+  .pub-card:hover{ border-color:var(--moss-deep); transform:translateX(2px); }
+  .pub-kind{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ochre); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px; }
+  .pub-card h3{ font-size:17px; margin-bottom:6px; line-height:1.3; }
+  .pub-card p{ font-size:14px; color:var(--ink-soft); margin-bottom:8px; }
+  .pub-link{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--moss-deep); font-weight:500; }
+
   /* ---------- Certifications ---------- */
   .cert-list{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
   .cert{
@@ -382,32 +395,48 @@
   <section id="samples">
     <div class="wrap">
       <p class="kicker tag">samples</p>
-      <h2>A couple of sample projects.</h2>
-      <p style="color:var(--ink-soft); max-width:600px; margin:-18px 0 30px; font-size:14.5px;">Client work from my internships is confidential, so these are self-directed sample projects — built specifically to show how I think, not real client data. Ask and I'll gladly walk through my actual process.</p>
+      <h2>Published SEO work &amp; writing samples.</h2>
+      <p style="color:var(--ink-soft); max-width:640px; margin:-18px 0 10px; font-size:14.5px;">During my internship at Return On Web, I led keyword research, search-intent mapping, and content structure for blog content in the cannabis &amp; CBD marketing vertical — briefed the writer, gave image guidance, and implemented internal linking before handoff for publishing. Specific client names stay confidential; the posts below are the agency's own published content.</p>
 
-      <div class="samples">
-        <div class="sample-card">
-          <div class="kind">Sample · SEO case study</div>
-          <h3>On-page audit: mid-size D2C site</h3>
-          <p>A self-directed audit identifying quick-win on-page opportunities — title/meta rewrites, header restructuring, and internal-linking gaps — for a hypothetical D2C apparel site.</p>
-          <div class="stats">
-            <div class="stat"><b>12</b><span>pages audited</span></div>
-            <div class="stat"><b>8</b><span>quick-win fixes</span></div>
-            <div class="stat"><b>3</b><span>linking clusters mapped</span></div>
-          </div>
-          <button class="expand" data-target="s1">Read the approach →</button>
-          <div class="sample-body" id="s1">
-            <p><b>Approach:</b> Started with a content inventory to flag thin or duplicate pages, then mapped each page to a specific search intent (informational, commercial, transactional) before touching any copy.</p>
-            <p><b>What I changed:</b> Rewrote meta titles/descriptions to match intent and include primary keywords naturally, restructured H1–H3 hierarchy for scannability, and proposed an internal-linking cluster connecting blog content to category pages.</p>
-            <p><b>Why it matters:</b> Small on-page fixes compound — this is the kind of pass I run before recommending any larger content investment.</p>
-          </div>
-          <p class="disclaimer">Sample project for demonstration — not affiliated with any real brand.</p>
-        </div>
+      <div class="pub-list">
+        <a class="pub-card" href="https://spokesdigital.us/the-complete-guide-to-cannabis-seo-marketing-for-dispensaries-cannabis-brands/" target="_blank" rel="noopener">
+          <div class="pub-kind">Published · SEO guide</div>
+          <h3>The Complete Guide to Cannabis SEO Marketing for Dispensaries &amp; Cannabis Brands</h3>
+          <p>Full-funnel SEO guide covering keyword research, on-page structure, local SEO, and GEO for dispensaries.</p>
+          <span class="pub-link">Read on Spokes Digital ↗</span>
+        </a>
+        <a class="pub-card" href="https://spokesdigital.us/cannabis-dispensary-seo-the-ultimate-2026-guide-for-rankings-traffic-revenue/" target="_blank" rel="noopener">
+          <div class="pub-kind">Published · SEO guide</div>
+          <h3>Cannabis Dispensary SEO: The Ultimate 2026 Guide for Rankings, Traffic &amp; Revenue</h3>
+          <p>Blueprint-style guide connecting SEO fundamentals to revenue outcomes for dispensary websites.</p>
+          <span class="pub-link">Read on Spokes Digital ↗</span>
+        </a>
+        <a class="pub-card" href="https://spokesdigital.us/cannabis-seo-ppc-strategies-for-cbd-brands-and-dispensaries-in-2026/" target="_blank" rel="noopener">
+          <div class="pub-kind">Published · SEO + PPC</div>
+          <h3>Cannabis SEO &amp; PPC Strategies for CBD Brands and Dispensaries in 2026</h3>
+          <p>Combined organic and paid strategy piece for CBD brands navigating restricted ad platforms.</p>
+          <span class="pub-link">Read on Spokes Digital ↗</span>
+        </a>
+        <a class="pub-card" href="https://spokesdigital.us/google-ads-for-cannabis-in-2026-whats-allowed-whats-policy-news-and-what-actually-works/" target="_blank" rel="noopener">
+          <div class="pub-kind">Published · Paid search</div>
+          <h3>Google Ads for Cannabis in 2026: What's Allowed, Policy News &amp; What Works</h3>
+          <p>Policy-focused breakdown of what's currently possible on Google Ads for cannabis brands.</p>
+          <span class="pub-link">Read on Spokes Digital ↗</span>
+        </a>
+        <a class="pub-card" href="https://spokesdigital.us/revenue-growth-solutions-for-cannabis-dispensaries/" target="_blank" rel="noopener">
+          <div class="pub-kind">Published · Growth strategy</div>
+          <h3>Revenue Growth Solutions for Cannabis Dispensaries</h3>
+          <p>Overview of growth levers — organic, local, and retention — for dispensary revenue growth.</p>
+          <span class="pub-link">Read on Spokes Digital ↗</span>
+        </a>
+      </div>
 
+      <h3 style="font-size:19px; margin:44px 0 18px;">Practice sample</h3>
+      <div class="samples" style="grid-template-columns:1fr;">
         <div class="sample-card">
           <div class="kind">Sample · Writing</div>
           <h3>"How to Plan a Sorority Recruitment Event" — content brief + intro</h3>
-          <p>A content brief and opening section written to match real search intent behind a long-tail, high-intent query — the kind of piece meant to earn clicks and time on page, not just rank.</p>
+          <p>A self-directed content brief and opening section written to match real search intent behind a long-tail, high-intent query — the kind of piece meant to earn clicks and time on page, not just rank.</p>
           <div class="stats">
             <div class="stat"><b>850</b><span>target word count</span></div>
             <div class="stat"><b>Guide</b><span>content type</span></div>
@@ -419,7 +448,7 @@
             <p><b>Opening lines (sample):</b> "Recruitment week always arrives faster than the planning calendar suggests. The chapters that pull it off calmly aren't the ones with the biggest budget — they're the ones who started with a checklist, not a Pinterest board."</p>
             <p><b>Voice notes:</b> Warm, direct, a little conversational — written for a college-age reader, not a corporate one.</p>
           </div>
-          <p class="disclaimer">Sample project for demonstration — written independently, no client affiliation.</p>
+          <p class="disclaimer">Self-directed practice piece — written independently, no client affiliation.</p>
         </div>
       </div>
     </div>
